@@ -17,6 +17,11 @@ from configurations import values
 import os
 
 
+def get_key():
+    data_file = open('key_omd.txt', 'r')       
+    key_omd = data_file.read()
+    return key_omd
+
 class Dev(Configuration):
         
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,6 +36,8 @@ class Dev(Configuration):
 
     # SECURITY WARNING: don't run with debug turned on in production!
     DEBUG = True
+
+    OMDB_KEY = get_key()
 
     ALLOWED_HOSTS = ['*']
     #X_FRAME_OPTIONS = 'ALLOW-FROM ' + os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io'
