@@ -50,6 +50,9 @@ class Dev(Configuration):
     #broker configuration with redis celery
     CELERY_RESULT_BACKEND = "django-db"
     CELERY_BROKER_URL = "redis://localhost:6379/0"
+    #output messages to the console, signals
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    ADMINS = [("Ben", "ben@example.com"), ("Mafparra", "maaferna@gmail.com")]
 
     # Application definition
 
